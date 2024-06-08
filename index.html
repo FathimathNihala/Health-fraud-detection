@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Health Insurance Fraud Detection</h1>
+    <form action="/detection" method="post">
+        <h3>Enter the details below</h3>
+
+        <fieldset>
+            <legend>Beneficiary details:</legend>
+
+            <label for="Beneficiary ID">Beneficiary ID</label>
+            <input type="text" id="Beneficiary ID" name="Beneficiary ID" value="BENE" pattern="BENE[0-9]{5,}" title="BENE12345" required>
+
+            <label for="Date Of Birth">Date of Birth</label>
+            <input type="date" id="Date Of Birth" name="Date Of Birth" required>
+
+            <p>If the beneficiary has particular disease, select 1 otherwise select 2</p>
+
+            <label for="Alzheimer">Alzheimer</label>
+            <select id="Alzheimer" name="Alzheimer" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Heart Failure">Heart Failure</label>
+            <select id="Heart Failure" name="Heart Failure" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Chronic Kidney Disease">Kidney Disease</label>
+            <select id="Chronic Kidney Disease" name="Chronic Kidney Disease" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Cancer">Cancer</label>
+            <select id="Cancer" name="Cancer" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Obstructive Pulmonary">Obstructive Pulmonary</label>
+            <select id="Obstructive Pulmonary" name="Obstructive Pulmonary" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Depression">Depression</label>
+            <select id="Depression" name="Depression" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Diabetes">Diabetes</label>
+            <select id="Diabetes" name="Diabetes" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Ischemic Heart">Ischemic Heart</label>
+            <select id="Ischemic Heart" name="Ischemic Heart" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Osteo Porosis">Osteo Porosis</label>
+            <select id="Osteo Porosis" name="Osteo Porosis" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Rheumatoid Arthritis">Rheumatoid Arthritis</label>
+            <select id="Rheumatoid Arthritis" name="Rheumatoid Arthritis" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="Stroke">Stroke</label>
+            <select id="Stroke" name="Stroke" required>
+                <option hidden disabled selected value>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Claim details:</legend>
+
+            <label for="Insurance Claim Amount Reimbursed">Insurance Claim Amount Reimbursed</label>
+            <input type="number" id="Insurance Claim Amount Reimbursed" name="Insurance Claim Amount Reimbursed" required>
+
+            <label for="IP Annual Reimbursement Amount">IP Annual Reimbursement Amount</label>
+            <input type="number" id="IP Annual Reimbursement Amount" name="IP Annual Reimbursement Amount" required>
+
+            <label for="OP Annual Reimbursement Amount">OP Annual Reimbursement Amount</label>
+            <input type="number" id="OP Annual Reimbursement Amount" name="OP Annual Reimbursement Amount" required>
+
+            <label for="IP Annual Deductible Amount">IP Annual Deductible Amount</label>
+            <input type="number" id="IP Annual Deductible Amount" name="IP Annual Deductible Amount" required>
+
+            <label for="OP Annual Deductible Amount">OP Annual Deductible Amount</label>
+            <input type="number" id="OP Annual Deductible Amount" name="OP Annual Deductible Amount" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Provider (Hospital, Laboratory etc) details:</legend>
+
+            <label for="Provider ID">Provider ID</label>
+            <input type="text" id="Provider ID" name="Provider ID" value="PRV" pattern="PRV[0-9]{5,}" title="PRV12345" required>
+
+            <label for="Attending Physician ID">Attended Physician ID</label>
+            <input type="text" id="Attending Physician ID" name="Attending Physician ID" value="PHY" pattern="PHY[0-9]{6,}" title="PHY123456" required>
+
+            <label for="Operating Physician ID">Operated Physician ID</label>
+            <input type="text" id="Operating Physician ID" name="Operating Physician ID" value="PHY" pattern="PHY[0-9]{6,}" title="PHY123456" required>
+
+            <label for="Other Physician ID">Other Physician ID</label>
+            <input type="text" id="Other Physician ID" name="Other Physician ID" value="PHY" pattern="PHY[0-9]{6,}" title="PHY123456" required>
+
+            <label for="Claim Admit Diagnosis Code">Claim Admit Diagnosis Code</label>
+            <input type="text" id="Claim Admit Diagnosis Code" name="Claim Admit Diagnosis Code" required>
+        </fieldset>
+
+        <button type="submit">Detect</button>
+    </form>
+</body>
+
+</html>

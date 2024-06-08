@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    
+</head>
+
+<body>
+
+    {% if pred_res == 0 %}
+    <img class=Legitimate src="../static/legitimate.jpeg" alt="Legitimate" > 
+    {% elif pred_res == 1 %}
+    <img class=Fraudulent src="../static/fraudulent.jpg" alt="Fraudulent" > 
+    {% endif %}
+
+</body>
+
+</html>
